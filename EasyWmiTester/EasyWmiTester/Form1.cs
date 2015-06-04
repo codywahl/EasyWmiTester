@@ -203,7 +203,7 @@ namespace EasyWmiTester
             throw new Exception("no return value");
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        private void RunWmiButton_Click(object sender, EventArgs e)
         {
             listBox1.DataSource = null;
             listBox1.Refresh();
@@ -212,7 +212,7 @@ namespace EasyWmiTester
             listBox1.Refresh();
         }
 
-        private void button2_Click(object sender, EventArgs e)
+        private void RunRegQueryButton_Click(object sender, EventArgs e)
         {
             listBox1.DataSource = null;
             listBox1.Refresh();
@@ -222,6 +222,11 @@ namespace EasyWmiTester
 
             listBox1.DataSource = list;
             listBox1.Refresh();
+        }
+
+        private void ExampleQueryButton_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }
