@@ -1,0 +1,9 @@
+H:\CodyWahl\Sandboxes\EasyWMITester\EasyWmiTester\EasyWmiTester\bin\Debug\EasyWmiTester.exe.config
+H:\CodyWahl\Sandboxes\EasyWMITester\EasyWmiTester\EasyWmiTester\bin\Debug\EasyWmiTester.exe
+H:\CodyWahl\Sandboxes\EasyWMITester\EasyWmiTester\EasyWmiTester\bin\Debug\EasyWmiTester.pdb
+H:\CodyWahl\Sandboxes\EasyWMITester\EasyWmiTester\EasyWmiTester\obj\Debug\EasyWmiTester.Form1.resources
+H:\CodyWahl\Sandboxes\EasyWMITester\EasyWmiTester\EasyWmiTester\obj\Debug\EasyWmiTester.Properties.Resources.resources
+H:\CodyWahl\Sandboxes\EasyWMITester\EasyWmiTester\EasyWmiTester\obj\Debug\EasyWmiTester.csproj.GenerateResource.Cache
+H:\CodyWahl\Sandboxes\EasyWMITester\EasyWmiTester\EasyWmiTester\obj\Debug\EasyWmiTester.exe
+H:\CodyWahl\Sandboxes\EasyWMITester\EasyWmiTester\EasyWmiTester\obj\Debug\EasyWmiTester.pdb
+H:\CodyWahl\Sandboxes\EasyWMITester\EasyWmiTester\EasyWmiTester\obj\Debug\EasyWmiTester.csprojResolveAssemblyReference.cache
