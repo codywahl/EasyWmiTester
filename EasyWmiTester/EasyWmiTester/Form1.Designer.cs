@@ -58,6 +58,7 @@
             // listBox1
             // 
             this.listBox1.FormattingEnabled = true;
+            this.listBox1.HorizontalScrollbar = true;
             this.listBox1.Location = new System.Drawing.Point(12, 214);
             this.listBox1.Name = "listBox1";
             this.listBox1.Size = new System.Drawing.Size(722, 238);
@@ -140,7 +141,6 @@
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "WMI Reg Query";
             this.tabPage2.UseVisualStyleBackColor = true;
-            this.tabPage2.Click += new System.EventHandler(this.tabPage2_Click);
             // 
             // label4
             // 
@@ -167,8 +167,9 @@
             this.ClientSize = new System.Drawing.Size(746, 467);
             this.Controls.Add(this.tabControl1);
             this.Controls.Add(this.listBox1);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
             this.Name = "Form1";
-            this.Text = "Form1";
+            this.Text = "EasyWMI";
             this.tabControl1.ResumeLayout(false);
             this.tabPage1.ResumeLayout(false);
             this.tabPage1.PerformLayout();

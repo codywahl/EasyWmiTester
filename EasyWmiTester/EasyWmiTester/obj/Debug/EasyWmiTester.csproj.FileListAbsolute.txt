@@ -7,3 +7,12 @@ H:\CodyWahl\Sandboxes\EasyWMITester\EasyWmiTester\EasyWmiTester\obj\Debug\EasyWm
 H:\CodyWahl\Sandboxes\EasyWMITester\EasyWmiTester\EasyWmiTester\obj\Debug\EasyWmiTester.exe
 H:\CodyWahl\Sandboxes\EasyWMITester\EasyWmiTester\EasyWmiTester\obj\Debug\EasyWmiTester.pdb
 H:\CodyWahl\Sandboxes\EasyWMITester\EasyWmiTester\EasyWmiTester\obj\Debug\EasyWmiTester.csprojResolveAssemblyReference.cache
+E:\Coding\GitHub\EasyWmiTester\EasyWmiTester\EasyWmiTester\bin\Debug\EasyWmiTester.exe.config
+E:\Coding\GitHub\EasyWmiTester\EasyWmiTester\EasyWmiTester\obj\Debug\EasyWmiTester.exe
+E:\Coding\GitHub\EasyWmiTester\EasyWmiTester\EasyWmiTester\obj\Debug\EasyWmiTester.pdb
+E:\Coding\GitHub\EasyWmiTester\EasyWmiTester\EasyWmiTester\bin\Debug\EasyWmiTester.exe
+E:\Coding\GitHub\EasyWmiTester\EasyWmiTester\EasyWmiTester\bin\Debug\EasyWmiTester.pdb
+E:\Coding\GitHub\EasyWmiTester\EasyWmiTester\EasyWmiTester\obj\Debug\EasyWmiTester.csprojResolveAssemblyReference.cache
+E:\Coding\GitHub\EasyWmiTester\EasyWmiTester\EasyWmiTester\obj\Debug\EasyWmiTester.Form1.resources
+E:\Coding\GitHub\EasyWmiTester\EasyWmiTester\EasyWmiTester\obj\Debug\EasyWmiTester.Properties.Resources.resources
+E:\Coding\GitHub\EasyWmiTester\EasyWmiTester\EasyWmiTester\obj\Debug\EasyWmiTester.csproj.GenerateResource.Cache

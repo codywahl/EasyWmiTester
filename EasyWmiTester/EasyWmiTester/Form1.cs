@@ -48,7 +48,12 @@ namespace EasyWmiTester
 
                 foreach (ManagementObject mobj in collection)
                 {
-                    list.Add(mobj["name"].ToString());
+                    foreach (PropertyData mobjProp in mobj.Properties)
+                    {
+                        list.Add(mobjProp.Name + " : " + mobjProp.Value);
+                    }
+
+                    list.Add(string.Empty);
                 }
             }
             catch (Exception ex)
@@ -75,47 +80,8 @@ namespace EasyWmiTester
                 ManagementPath myPath = new ManagementPath("StdRegProv");
                 ManagementClass registry = new ManagementClass(scope, myPath, null);
 
-                //object oValue = GetValue(registry, RegHive.HKEY_LOCAL_MACHINE, "SOFTWARE\\Microsoft\\.NETFramework", "InstallRoot");
                 object oValue = GetValue(registry, RegHive.HKEY_LOCAL_MACHINE, sSubKeyName, sValueName);
                 return oValue.ToString();
-
-                // Returns a specific value for a specified key
-                //ManagementBaseObject inParams = registry.GetMethodParameters("GetDWORDValue");
-                //const uint LOCAL_MACHINE = 0x80000002;
-                //inParams["hDefKey"] = hDefKey;
-                //inParams["hDefKey"] = LOCAL_MACHINE;
-                //inParams["sSubKeyName"] = sSubKeyName;
-                //inParams["sValueName"] = sValueName;
-
-                //inParams["hDefKey"] = 0x80000002;// HKEY_LOCAL_MACHINE;
-                //inParams["sSubKeyName"] = @"SOFTWARE\Microsoft\.NETFramework";
-                //inParams["sValueName"] = @"InstallRoot";
-
-                //ManagementBaseObject outParams = registry.InvokeMethod("GetDWORDValue", inParams, null);
-
-                //string output = "derp";
-
-                //foreach (var x in outParams.Properties)
-                //{
-                //    MessageBox.Show(x.Name);
-                //}
-
-                //if (outParams.Properties["sValue"].Value != null)
-                //{
-                //    output = outParams.Properties["sValue"].Value.ToString();
-                //}
-
-                //if (outParams.Properties["uValue"].Value != null)
-                //{
-                //    output = outParams.Properties["uValue"].Value.ToString();
-                //}
-
-                //if (outParams.Properties["ReturnValue"].Value != null)
-                //{
-                //    output = outParams.Properties["ReturnValue"].Value.ToString();
-                //}
-
-                //return "";
             }
             catch (Exception ex)
             {
@@ -256,10 +222,6 @@ namespace EasyWmiTester
 
             listBox1.DataSource = list;
             listBox1.Refresh();
-        }
-
-        private void tabPage2_Click(object sender, EventArgs e)
-        {
         }
     }
 }
