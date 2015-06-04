@@ -29,16 +29,18 @@
         private void InitializeComponent()
         {
             this.RunWmiButton = new System.Windows.Forms.Button();
-            this.listBox1 = new System.Windows.Forms.ListBox();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.WmiQueryTextBox = new System.Windows.Forms.TextBox();
+            this.SubKeyNameTextBox = new System.Windows.Forms.TextBox();
             this.RunRegQueryButton = new System.Windows.Forms.Button();
-            this.textBox3 = new System.Windows.Forms.TextBox();
+            this.ValueNameTextBox = new System.Windows.Forms.TextBox();
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
+            this.WmiQueryResultsListBox = new System.Windows.Forms.ListBox();
             this.ExampleQueryButton = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.tabPage2 = new System.Windows.Forms.TabPage();
+            this.WmiRegQueryResultsListBox = new System.Windows.Forms.ListBox();
+            this.LoadExampleRegQueryButton = new System.Windows.Forms.Button();
             this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.tabControl1.SuspendLayout();
@@ -56,32 +58,23 @@
             this.RunWmiButton.UseVisualStyleBackColor = true;
             this.RunWmiButton.Click += new System.EventHandler(this.RunWmiButton_Click);
             // 
-            // listBox1
+            // WmiQueryTextBox
             // 
-            this.listBox1.FormattingEnabled = true;
-            this.listBox1.HorizontalScrollbar = true;
-            this.listBox1.Location = new System.Drawing.Point(12, 214);
-            this.listBox1.Name = "listBox1";
-            this.listBox1.Size = new System.Drawing.Size(722, 238);
-            this.listBox1.TabIndex = 1;
+            this.WmiQueryTextBox.Location = new System.Drawing.Point(110, 28);
+            this.WmiQueryTextBox.Name = "WmiQueryTextBox";
+            this.WmiQueryTextBox.Size = new System.Drawing.Size(598, 20);
+            this.WmiQueryTextBox.TabIndex = 2;
             // 
-            // textBox1
+            // SubKeyNameTextBox
             // 
-            this.textBox1.Location = new System.Drawing.Point(110, 28);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(598, 20);
-            this.textBox1.TabIndex = 2;
-            // 
-            // textBox2
-            // 
-            this.textBox2.Location = new System.Drawing.Point(112, 12);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(583, 20);
-            this.textBox2.TabIndex = 3;
+            this.SubKeyNameTextBox.Location = new System.Drawing.Point(112, 12);
+            this.SubKeyNameTextBox.Name = "SubKeyNameTextBox";
+            this.SubKeyNameTextBox.Size = new System.Drawing.Size(583, 20);
+            this.SubKeyNameTextBox.TabIndex = 3;
             // 
             // RunRegQueryButton
             // 
-            this.RunRegQueryButton.Location = new System.Drawing.Point(320, 85);
+            this.RunRegQueryButton.Location = new System.Drawing.Point(365, 85);
             this.RunRegQueryButton.Name = "RunRegQueryButton";
             this.RunRegQueryButton.Size = new System.Drawing.Size(75, 40);
             this.RunRegQueryButton.TabIndex = 4;
@@ -89,12 +82,12 @@
             this.RunRegQueryButton.UseVisualStyleBackColor = true;
             this.RunRegQueryButton.Click += new System.EventHandler(this.RunRegQueryButton_Click);
             // 
-            // textBox3
+            // ValueNameTextBox
             // 
-            this.textBox3.Location = new System.Drawing.Point(112, 38);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(583, 20);
-            this.textBox3.TabIndex = 5;
+            this.ValueNameTextBox.Location = new System.Drawing.Point(112, 38);
+            this.ValueNameTextBox.Name = "ValueNameTextBox";
+            this.ValueNameTextBox.Size = new System.Drawing.Size(583, 20);
+            this.ValueNameTextBox.TabIndex = 5;
             // 
             // tabControl1
             // 
@@ -103,22 +96,32 @@
             this.tabControl1.Location = new System.Drawing.Point(12, 12);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
-            this.tabControl1.Size = new System.Drawing.Size(722, 187);
+            this.tabControl1.Size = new System.Drawing.Size(722, 428);
             this.tabControl1.TabIndex = 7;
             // 
             // tabPage1
             // 
+            this.tabPage1.Controls.Add(this.WmiQueryResultsListBox);
             this.tabPage1.Controls.Add(this.ExampleQueryButton);
             this.tabPage1.Controls.Add(this.label1);
-            this.tabPage1.Controls.Add(this.textBox1);
+            this.tabPage1.Controls.Add(this.WmiQueryTextBox);
             this.tabPage1.Controls.Add(this.RunWmiButton);
             this.tabPage1.Location = new System.Drawing.Point(4, 22);
             this.tabPage1.Name = "tabPage1";
             this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage1.Size = new System.Drawing.Size(714, 161);
+            this.tabPage1.Size = new System.Drawing.Size(714, 402);
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "WMI Query";
             this.tabPage1.UseVisualStyleBackColor = true;
+            // 
+            // WmiQueryResultsListBox
+            // 
+            this.WmiQueryResultsListBox.FormattingEnabled = true;
+            this.WmiQueryResultsListBox.HorizontalScrollbar = true;
+            this.WmiQueryResultsListBox.Location = new System.Drawing.Point(3, 158);
+            this.WmiQueryResultsListBox.Name = "WmiQueryResultsListBox";
+            this.WmiQueryResultsListBox.Size = new System.Drawing.Size(705, 238);
+            this.WmiQueryResultsListBox.TabIndex = 5;
             // 
             // ExampleQueryButton
             // 
@@ -141,18 +144,39 @@
             // 
             // tabPage2
             // 
+            this.tabPage2.Controls.Add(this.WmiRegQueryResultsListBox);
+            this.tabPage2.Controls.Add(this.LoadExampleRegQueryButton);
             this.tabPage2.Controls.Add(this.label4);
             this.tabPage2.Controls.Add(this.label3);
             this.tabPage2.Controls.Add(this.RunRegQueryButton);
-            this.tabPage2.Controls.Add(this.textBox2);
-            this.tabPage2.Controls.Add(this.textBox3);
+            this.tabPage2.Controls.Add(this.SubKeyNameTextBox);
+            this.tabPage2.Controls.Add(this.ValueNameTextBox);
             this.tabPage2.Location = new System.Drawing.Point(4, 22);
             this.tabPage2.Name = "tabPage2";
             this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage2.Size = new System.Drawing.Size(714, 161);
+            this.tabPage2.Size = new System.Drawing.Size(714, 402);
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "WMI Reg Query";
             this.tabPage2.UseVisualStyleBackColor = true;
+            // 
+            // WmiRegQueryResultsListBox
+            // 
+            this.WmiRegQueryResultsListBox.FormattingEnabled = true;
+            this.WmiRegQueryResultsListBox.HorizontalScrollbar = true;
+            this.WmiRegQueryResultsListBox.Location = new System.Drawing.Point(3, 158);
+            this.WmiRegQueryResultsListBox.Name = "WmiRegQueryResultsListBox";
+            this.WmiRegQueryResultsListBox.Size = new System.Drawing.Size(705, 238);
+            this.WmiRegQueryResultsListBox.TabIndex = 11;
+            // 
+            // LoadExampleRegQueryButton
+            // 
+            this.LoadExampleRegQueryButton.Location = new System.Drawing.Point(275, 85);
+            this.LoadExampleRegQueryButton.Name = "LoadExampleRegQueryButton";
+            this.LoadExampleRegQueryButton.Size = new System.Drawing.Size(84, 40);
+            this.LoadExampleRegQueryButton.TabIndex = 10;
+            this.LoadExampleRegQueryButton.Text = "Load Example Query";
+            this.LoadExampleRegQueryButton.UseVisualStyleBackColor = true;
+            this.LoadExampleRegQueryButton.Click += new System.EventHandler(this.LoadExampleRegQueryButton_Click);
             // 
             // label4
             // 
@@ -176,9 +200,8 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(746, 467);
+            this.ClientSize = new System.Drawing.Size(743, 451);
             this.Controls.Add(this.tabControl1);
-            this.Controls.Add(this.listBox1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
             this.Name = "Form1";
             this.Text = "EasyWMI";
@@ -194,11 +217,10 @@
         #endregion
 
         private System.Windows.Forms.Button RunWmiButton;
-        private System.Windows.Forms.ListBox listBox1;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.TextBox WmiQueryTextBox;
+        private System.Windows.Forms.TextBox SubKeyNameTextBox;
         private System.Windows.Forms.Button RunRegQueryButton;
-        private System.Windows.Forms.TextBox textBox3;
+        private System.Windows.Forms.TextBox ValueNameTextBox;
         private System.Windows.Forms.TabControl tabControl1;
         private System.Windows.Forms.TabPage tabPage1;
         private System.Windows.Forms.Label label1;
@@ -206,6 +228,9 @@
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Button ExampleQueryButton;
+        private System.Windows.Forms.Button LoadExampleRegQueryButton;
+        private System.Windows.Forms.ListBox WmiQueryResultsListBox;
+        private System.Windows.Forms.ListBox WmiRegQueryResultsListBox;
     }
 }
 

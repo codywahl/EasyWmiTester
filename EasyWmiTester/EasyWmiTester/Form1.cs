@@ -7,6 +7,16 @@ namespace EasyWmiTester
 {
     public partial class Form1 : Form
     {
+        #region Constants
+
+        private const string WMI_QUERY_EXAMPLE = "SELECT * FROM Win32_LogicalDisk";
+        private const string SUB_KEY_NAME_EXAMPLE = "SOFTWARE\\Microsoft\\.NETFramework";
+        private const string VALUE_NAME_EXAMPLE = "InstallRoot";
+
+        #endregion Constants
+
+        #region Enums
+
         public enum RegHive : uint
         {
             HKEY_CLASSES_ROOT = 0x80000000,
@@ -25,10 +35,18 @@ namespace EasyWmiTester
             REG_MULTI_SZ = 7
         }
 
+        #endregion Enums
+
+        #region Constructor
+
         public Form1()
         {
             InitializeComponent();
         }
+
+        #endregion Constructor
+
+        #region Private Helpers
 
         private List<string> RunWMIQuery(string query)
         {
@@ -91,7 +109,7 @@ namespace EasyWmiTester
             return "";
         }
 
-        public static object GetValue(ManagementClass mc, RegHive hDefKey, string sSubKeyName, string sValueName)
+        private static object GetValue(ManagementClass mc, RegHive hDefKey, string sSubKeyName, string sValueName)
         {
             RegType rType = GetValueType(mc, hDefKey, sSubKeyName, sValueName);
 
@@ -203,30 +221,42 @@ namespace EasyWmiTester
             throw new Exception("no return value");
         }
 
+        #endregion Private Helpers
+
+        #region Event Handlers
+
         private void RunWmiButton_Click(object sender, EventArgs e)
         {
-            listBox1.DataSource = null;
-            listBox1.Refresh();
+            WmiQueryResultsListBox.DataSource = null;
+            WmiQueryResultsListBox.Refresh();
 
-            listBox1.DataSource = RunWMIQuery(textBox1.Text);
-            listBox1.Refresh();
+            WmiQueryResultsListBox.DataSource = RunWMIQuery(WmiQueryTextBox.Text);
+            WmiQueryResultsListBox.Refresh();
         }
 
         private void RunRegQueryButton_Click(object sender, EventArgs e)
         {
-            listBox1.DataSource = null;
-            listBox1.Refresh();
+            WmiRegQueryResultsListBox.DataSource = null;
+            WmiRegQueryResultsListBox.Refresh();
 
             List<string> list = new List<string>();
-            list.Add(RunRegWMIQuery(textBox2.Text, textBox3.Text));
+            list.Add(RunRegWMIQuery(SubKeyNameTextBox.Text, ValueNameTextBox.Text));
 
-            listBox1.DataSource = list;
-            listBox1.Refresh();
+            WmiRegQueryResultsListBox.DataSource = list;
+            WmiRegQueryResultsListBox.Refresh();
         }
 
         private void ExampleQueryButton_Click(object sender, EventArgs e)
         {
-
+            WmiQueryTextBox.Text = WMI_QUERY_EXAMPLE;
         }
+
+        private void LoadExampleRegQueryButton_Click(object sender, EventArgs e)
+        {
+            SubKeyNameTextBox.Text = SUB_KEY_NAME_EXAMPLE;
+            ValueNameTextBox.Text = VALUE_NAME_EXAMPLE;
+        }
+
+        #endregion Event Handlers
     }
 }
